@@ -5,5 +5,11 @@ import Header from "@/components/Header";
 
 export default function ConditionalHeader() {
   const pathname = usePathname();
-  return <>{pathname === "/about" ? <Header isBgLight /> : <Header />}</>;
+  let header = null;
+
+  if (!pathname.startsWith("/studio")) {
+    header = pathname === "/about" ? <Header isBgLight /> : <Header />;
+  }
+
+  return <>{header}</>;
 }

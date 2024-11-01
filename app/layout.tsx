@@ -3,7 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import ConditionalHeader from "@/components/ConditionalHeader";
 import { ReactNode } from "react";
-import Footer from "@/components/Footer";
+import ConditionalFooter from "@/components/ConditionalFooter";
 
 export const metadata: Metadata = {
   title: "Thomas Profile",
@@ -25,7 +25,7 @@ export default function RootLayout({
       <body className={`${inter.className} antialiased`} suppressHydrationWarning={true}>
         <ConditionalHeader />
         {children}
-        <Footer />
+        <ConditionalFooter />
       </body>
     </html>
   );
