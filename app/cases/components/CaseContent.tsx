@@ -2,10 +2,10 @@ import { memo } from "react";
 import AnimatedComponent from "@/components/AnimatedComponent";
 import Link from "next/link";
 import Image from "next/image";
-import { Case } from "@/utils/types";
+import { All_CASES_QUERYResult } from "@/sanity.types";
 
 interface Props {
-  caseCards: Case[];
+  caseCards: All_CASES_QUERYResult;
 }
 
 const CaseContent = memo(({ caseCards }: Props) => {
@@ -15,8 +15,8 @@ const CaseContent = memo(({ caseCards }: Props) => {
         <AnimatedComponent.div initial={{ opacity: 0 }} animate={{ opacity: 1, duration: 1 }} key={index}>
           <Link href="/cases/something">
             <Image
-              src={card.coverImageUrl}
-              alt={card.title}
+              src={card.coverImageUrl || ""}
+              alt={card.title || "Category Image"}
               width={0}
               height={0}
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
@@ -25,7 +25,7 @@ const CaseContent = memo(({ caseCards }: Props) => {
             <div className="flex flex-col justify-center gap-3 px-5 py-8 xl:p-10">
               <h6 className="text-[18px] font-semibold lg:text-[24px] xl:text-[28px]">{card.title}</h6>
               <div className="flex gap-3 text-sm font-semibold">
-                {card.categories.map((item, index) => (
+                {card.categories?.map((item, index) => (
                   <div key={index} className="rounded-full border border-primary px-2 py-1">
                     {item}
                   </div>

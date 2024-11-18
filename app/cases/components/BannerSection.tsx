@@ -1,10 +1,10 @@
 import { memo } from "react";
-import { Category } from "@/utils/types";
+import { ALL_CATEGORIES_QUERYResult } from "@/sanity.types";
 
 interface Props {
   selectedCategory: string;
   handleCategoryClick: (category: string) => void;
-  categories: Category[];
+  categories: ALL_CATEGORIES_QUERYResult;
 }
 
 const BannerSection = memo(({ selectedCategory, handleCategoryClick, categories }: Props) => {
@@ -26,7 +26,7 @@ const BannerSection = memo(({ selectedCategory, handleCategoryClick, categories 
             {categories.map((item, index) => (
               <button
                 key={index}
-                onClick={() => handleCategoryClick(item.name)}
+                onClick={() => handleCategoryClick(item.name || "")}
                 className={`border-b ${item.name === selectedCategory ? "border-orange text-orange" : "border-secondary"} py-4 text-left transition-colors duration-300 hover:border-orange hover:text-orange`}
               >
                 {item.name}

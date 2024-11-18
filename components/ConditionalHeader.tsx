@@ -7,7 +7,7 @@ export default function ConditionalHeader() {
   const pathname = usePathname();
   let header = null;
 
-  if (!pathname.startsWith("/studio")) {
+  if (!pathname.startsWith("/studio") && pathname !== "/gallery") {
     header = pathname === "/about" ? <Header isBgLight /> : <Header />;
   }
 

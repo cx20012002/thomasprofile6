@@ -4,6 +4,7 @@ import "./globals.css";
 import ConditionalHeader from "@/components/ConditionalHeader";
 import { ReactNode } from "react";
 import ConditionalFooter from "@/components/ConditionalFooter";
+import Transition from "./components/Transition";
 
 export const metadata: Metadata = {
   title: "Thomas Profile",
@@ -21,12 +22,14 @@ export default function RootLayout({
   children: ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${inter.className} antialiased`} suppressHydrationWarning={true}>
-        <ConditionalHeader />
-        {children}
-        <ConditionalFooter />
-      </body>
-    </html>
+    <Transition>
+      <html lang="en">
+        <body className={`${inter.className} antialiased`} suppressHydrationWarning={true}>
+          <ConditionalHeader />
+          {children}
+          <ConditionalFooter />
+        </body>
+      </html>
+    </Transition>
   );
 }

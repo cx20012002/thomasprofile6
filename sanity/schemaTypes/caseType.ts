@@ -1,6 +1,6 @@
 import { defineType, defineField } from 'sanity';
 
-export default defineType({
+export const caseType = defineType({
   name: "cases",
   title: "Cases",
   type: "document",

@@ -30,7 +30,7 @@ export const menu = [
   { name: "About", url: "/about" },
   { name: "Case Studies", url: "/cases" },
   { name: "Works", url: "/works" },
-  { name: "Journal", url: "/journal" },
+  { name: "Gallery", url: "/gallery" },
   { name: "Contact", url: "/contact" },
 ];
 
@@ -130,5 +130,38 @@ export const caseCards = [
     imgSrc: "/case-img5.avif",
     url: "#",
     category: ["Framer Tips", "Resources"],
+  },
+];
+
+export const faqs = [
+  {
+    title: "How does Clonify work?",
+    content:
+      "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias.",
+  },
+  {
+    title: "Which payment methods are accepted?",
+    content:
+      "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias.",
+  },
+  {
+    title: "How to get familiar with Figma?",
+    content:
+      "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias.",
+  },
+  {
+    title: "Can I get a refund?",
+    content:
+      "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias.",
+  },
+  {
+    title: "Where is my order?",
+    content:
+      "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias.",
+  },
+  {
+    title: "I have a problem",
+    content:
+      "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias.",
   },
 ];

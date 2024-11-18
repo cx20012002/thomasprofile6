@@ -1,20 +1,32 @@
-import { client } from "@/sanity/lib/client";
-import { SanityDocument } from "next-sanity";
+"use client";
 
-const CASES_QUERY = `*[_type == "cases" && "Coding" in categories[]->name]{
-  title,
-}`;
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
+import { useRef } from "react";
 
-const options = { next: { revalidate: 30 } };
+export default function page() {
+  gsap.registerPlugin(ScrollTrigger);
+  const squareRef = useRef<HTMLDivElement | null>(null);
 
-export default async function Page() {
-  const cases = await client.fetch<SanityDocument[]>(CASES_QUERY, {}, options);
-
+  useGSAP(() => {
+    ScrollTrigger.create({
+      trigger: squareRef.current,
+      start: "top center",
+      end: "bottom center",
+      markers: true,
+      onEnter: () => {
+        gsap.to(squareRef.current, {
+          x: 100,
+          duration: 1,
+        });
+      }
+      
+    });
+  }, []);
   return (
-    <div>
-      {cases.map((item, index) => (
-        <div key={index}>{item.title}</div>
-      ))}
+    <div className="relative h-screen w-full">
+      <div ref={squareRef} className="absolute top-[50vh] h-20 w-20 bg-green-300"></div>
     </div>
   );
 }

@@ -4,36 +4,24 @@ import BannerSection from "@/app/cases/components/BannerSection";
 import CaseContent from "@/app/cases/components/CaseContent";
 import { useEffect, useState, useCallback } from "react";
 import { client } from "@/sanity/lib/client";
-import { Case, Category } from "@/utils/types";
-
-const QUERY_ALL = `*[_type == "cases"]{
-  title,
-  "coverImageUrl": coverImage.asset->url,
-  "categories": categories[]->name
-}`;
-
-const QUERY_BY_CATEGORY = `*[_type == "cases" && $catname in categories[]->name]{
-  title,
-  "coverImageUrl": coverImage.asset->url,
-  "categories": categories[]->name
-}`;
-
-const CATEGORIES_QUERY = `*[_type == "caseCategory"]{name}`;
+import { All_CASES_QUERYResult, ALL_CATEGORIES_QUERYResult } from "@/sanity.types";
+import { All_CASES_QUERY, ALL_CATEGORIES_QUERY, QUERY_BY_CATEGORY } from "@/sanity/lib/cases/casesQueries";
 
 export default function Page() {
   const [selectedCategory, setSelectedCategory] = useState("All");
-  const [cases, setCases] = useState<Case[]>([]);
+  const [cases, setCases] = useState<All_CASES_QUERYResult>([]);
   const [loading, setLoading] = useState(false);
-  const [categories, setCategories] = useState<Category[]>([]);
+  const [categories, setCategories] = useState<ALL_CATEGORIES_QUERYResult>([]);
 
   const handleCategoryClick = useCallback((category: string) => {
     setSelectedCategory(category);
   }, []);
 
+  // Fetch cases based on selected category
   useEffect(() => {
     const loadCases = () => {
       setLoading(true);
-      const query = selectedCategory === "All" ? QUERY_ALL : QUERY_BY_CATEGORY;
+      const query = selectedCategory === "All" ? All_CASES_QUERY : QUERY_BY_CATEGORY;
       client
         .fetch(query, { catname: selectedCategory }, { next: { revalidate: 30 } })
         .then((res) => setCases(res))
@@ -43,11 +31,12 @@ export default function Page() {
     loadCases();
   }, [selectedCategory]);
 
+  // Fetch categories
   useEffect(() => {
     const loadCategories = () => {
       if (categories.length > 0) return;
       client
-        .fetch(CATEGORIES_QUERY, {}, { next: { revalidate: 30 } })
+        .fetch(ALL_CATEGORIES_QUERY, {}, { next: { revalidate: 30 } })
         .then((fetchedCategories) => {
           if (fetchedCategories.length > 0) {
             setCategories(fetchedCategories);
@@ -57,6 +46,7 @@ export default function Page() {
     };
     loadCategories();
   }, [categories]);
+
 
   return (
     <>

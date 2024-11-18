@@ -2,14 +2,28 @@
 
 import Image from "next/image";
 import AnimatedComponent from "@/components/AnimatedComponent";
+import ItemComponent from "./ItemComponent";
 
 export default function CorporateClients() {
   return (
     <AnimatedComponent.section
       initial={{ opacity: 0, y: 100 }}
       animate={{ opacity: 1, y: 0, duration: 0.5 }}
-      className={"section-container pb-20"}
+      className={"section-container flex flex-col items-center gap-20 pb-20"}
     >
+      {/* Past Experiance */}
+      <div className="flex w-full max-w-[800px] flex-col text-center">
+        <small className={"small-title"}>Past Experiance</small>
+        <h2 className={"md:sub-title text-[22px] font-bold leading-[1.2em]"}>Helping brands achieve sustainable</h2>
+      </div>
+
+      <div className="relative flex w-full flex-col divide-y-[1px] divide-black">
+        <ItemComponent />
+        <ItemComponent />
+        <ItemComponent />
+      </div>
+
+      {/* Corporate Clients */}
       <div
         className={
           "flex w-full flex-col justify-center rounded-[24px] border border-primary bg-[#f9fafb] lg:h-[400px] lg:flex-row"

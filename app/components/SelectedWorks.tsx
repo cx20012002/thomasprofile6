@@ -30,7 +30,7 @@ export default function SelectedWorks() {
         ))}
       </main>
       <div className={"flex w-full items-center justify-center"}>
-        <Link className={"flex items-center gap-3 rounded-full border-2 border-primary px-6 py-3"} href={"/"}>
+        <Link className={"flex items-center gap-3 rounded-full border-2 border-primary px-6 py-3"} href={"/cases"}>
           All case studies
           <Image src={"/arrow-icon-dark.svg"} alt={""} width={0} height={0} className={"w-4 -rotate-45"} />
         </Link>

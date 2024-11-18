@@ -5,5 +5,5 @@ import Footer from "@/components/Footer";
 
 export default function ConditionalFooter() {
   const pathname = usePathname();
-  return <>{!pathname.startsWith("/studio") && <Footer />}</>;
+  return <>{!pathname.startsWith("/studio") && pathname !== "/gallery" && <Footer />}</>;
 }

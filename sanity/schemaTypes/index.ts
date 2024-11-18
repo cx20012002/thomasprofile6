@@ -1,7 +1,7 @@
 import { type SchemaTypeDefinition } from "sanity";
-import caseCategory from "@/sanity/schemaTypes/caseCategory";
-import cases from "@/sanity/schemaTypes/cases";
+import { caseCategoryType } from "./caseCategoryType";
+import { caseType } from "./caseType";
 
 export const schema: { types: SchemaTypeDefinition[] } = {
-  types: [caseCategory, cases],
+  types: [caseCategoryType, caseType],
 };
