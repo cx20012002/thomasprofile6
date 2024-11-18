@@ -17,8 +17,8 @@ const CaseContent = memo(({ caseCards }: Props) => {
             <Image
               src={card.coverImageUrl || ""}
               alt={card.title || "Category Image"}
-              width={0}
-              height={0}
+              width={758}
+              height={615}
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               className="aspect-[8/6.5] w-full object-cover"
             />

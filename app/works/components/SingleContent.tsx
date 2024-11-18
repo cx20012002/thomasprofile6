@@ -34,10 +34,10 @@ export default function SingleContent() {
         </AnimatedComponent.div>
       </section>
       <div>
-        <Image src={"/selectedWork2.avif"} alt={"Selected Work"} width={0} height={500} className={"w-full"} />
+        <Image src={"/selectedWork2.avif"} alt={"Selected Work"} width={1500} height={700} className={"w-full"} />
         <div className={"flex flex-col lg:flex-row"}>
-          <Image src={"/selectedWork3.avif"} alt={"Selected Work"} width={0} height={0} className={"w-full lg:w-1/2"} />
-          <Image src={"/selectedWork5.avif"} alt={"Selected Work"} width={0} height={0} className={"w-full lg:w-1/2"} />
+          <Image src={"/selectedWork3.avif"} alt={"Selected Work"} width={750} height={600} className={"w-full lg:w-1/2"} />
+          <Image src={"/selectedWork5.avif"} alt={"Selected Work"} width={750} height={600} className={"w-full lg:w-1/2"} />
         </div>
       </div>
     </>

@@ -41,8 +41,8 @@ export default function BannerSection() {
                   <Image
                     src={"/banner_sm_img.avif"}
                     alt={"Banner Image"}
-                    width={0}
-                    height={0}
+                    width={230}
+                    height={100}
                     priority
                     className={"scaled-img w-full object-contain"}
                   />
@@ -97,8 +97,8 @@ export default function BannerSection() {
               <Image
                 src={"/arrow-icon-light.svg"}
                 alt={""}
-                width={0}
-                height={0}
+                width={20}
+                height={20}
                 className={"w-4 -rotate-45 transition-all group-hover:rotate-0"}
               />
             </span>

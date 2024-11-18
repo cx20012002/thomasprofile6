@@ -44,8 +44,8 @@ export default function CorporateClients() {
                 key={index}
                 src={`/logo${index}.avif`}
                 alt={"Client Logo"}
-                width={0}
-                height={0}
+                width={120}
+                height={52}
                 className={"w-[120px] object-contain"}
               />
             ))}

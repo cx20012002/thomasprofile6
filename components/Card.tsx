@@ -56,8 +56,8 @@ export default function Card({
             <Image
               src={"/arrow-icon-dark.svg"}
               alt={""}
-              width={0}
-              height={0}
+              width={40}
+              height={40}
               className={"w-5 -rotate-45 transition-all group-hover:rotate-0"}
             />
           </div>

@@ -15,7 +15,7 @@ export default function Experience() {
       <div className={"flex w-full max-w-[1280px] flex-col justify-between gap-10 xl:flex-row"}>
         <div className={"w-full text-lg font-medium xl:w-3/12"}>
           <Link href={"/"} className={"flex items-center gap-2"}>
-            <Image src={"/back_icon.svg"} alt={"Back icon"} width={0} height={0} className={"w-[20px]"} />
+            <Image src={"/back_icon.svg"} alt={"Back icon"} width={20} height={20} className={"w-[20px]"} />
             Experience
           </Link>
         </div>

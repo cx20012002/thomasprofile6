@@ -54,8 +54,8 @@ export default function BannerSection() {
                     <Image
                       src={"/banner_sm_img.avif"}
                       alt={"Banner Image"}
-                      width={0}
-                      height={0}
+                      width={230}
+                      height={100}
                       priority
                       className={"scaled-img w-full object-contain"}
                     />
@@ -81,8 +81,8 @@ export default function BannerSection() {
                     <Image
                       src={"/banner_img_3.avif"}
                       alt={"Banner Image"}
-                      width={0}
-                      height={0}
+                      width={230}
+                      height={100}
                       priority
                       className={"scaled-img w-full object-contain"}
                     />

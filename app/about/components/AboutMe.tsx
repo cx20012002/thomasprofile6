@@ -30,8 +30,8 @@ export default function AboutMe() {
             <Image
               src={"/aboutme.avif"}
               alt={"About Me"}
-              width={0}
-              height={0}
+              width={500}
+              height={600}
               className={
                 "h-[500px] w-full rounded-[40px] object-cover transition-transform duration-300 group-hover:scale-90 md:h-[600px]"
               }

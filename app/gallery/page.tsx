@@ -227,8 +227,8 @@ export default function Gallery() {
                 <Image
                   key={idx}
                   src={`/gallery/img${idx}.jpg`}
-                  width={0}
-                  height={0}
+                  width={200}
+                  height={137}
                   sizes="(max-width: 640px) 100vw, 640px"
                   alt="Gallery Image"
                   className="aspect-square w-[200px] flex-1 overflow-hidden object-cover"

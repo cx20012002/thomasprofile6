@@ -13,8 +13,8 @@ export default function SingleCaseBanner() {
             <Image
               src={"/back_icon_light.svg"}
               alt={"back"}
-              width={0}
-              height={0}
+              width={1516}
+              height={706}
               className={"aspect-square w-5 rotate-180"}
             />
             Back to blog

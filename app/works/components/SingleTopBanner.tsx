@@ -32,7 +32,7 @@ export default function SingleTopBanner({ title }: { title: string }) {
         </AnimatedComponent.div>
       </section>
       <AnimatedComponent.div initial={{ opacity: 0 }} animate={{ opacity: 1, duration: 0.5 }}>
-        <Image src={"/selectedWork4.avif"} alt={"Selected Work"} width={0} height={0} priority className={"w-full"} />
+        <Image src={"/selectedWork4.avif"} alt={"Selected Work"} width={1500} height={700} priority className={"w-full"} />
       </AnimatedComponent.div>
     </>
   );

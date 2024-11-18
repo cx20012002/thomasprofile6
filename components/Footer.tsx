@@ -15,8 +15,8 @@ export default function Footer() {
             <Image
               src={"/footer_img.avif"}
               alt={"Footer Image"}
-              width={0}
-              height={0}
+              width={186}
+              height={108}
               className={"w-[186px] object-contain"}
             />
             <h1>Talk</h1>
@@ -29,7 +29,7 @@ export default function Footer() {
             href={"/contact"}
             className="flex items-center gap-2 rounded-full bg-white px-8 py-5 text-[16px] font-semibold"
           >
-            <Image src={"/calendar-dark.svg"} alt={""} width={0} height={0} className="w-4" />
+            <Image src={"/calendar-dark.svg"} alt={""} width={20} height={20} className="w-4" />
             Schedule a call
           </Link>
         </div>
